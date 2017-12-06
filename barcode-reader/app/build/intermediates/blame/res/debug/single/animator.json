@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/animator/clockwise_rotation.xml",
+        "source": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/src/main/res/animator/clockwise_rotation.xml"
+    },
+    {
+        "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/animator/morpher.xml",
+        "source": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/src/main/res/animator/morpher.xml"
+    }
+]

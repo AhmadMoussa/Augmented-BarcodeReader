@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- res/drawable/ic_menu_animatable.xml -->
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/flash_on">
+    <target
+        android:name="menu"
+        android:animation="@animator/morpher"/>
+    <target
+        android:name="rotation"
+        android:animation="@animator/clockwise_rotation"/>
+</animated-vector>
