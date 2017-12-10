@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-  <RelativeLayout
-      xmlns:android="http://schemas.android.com/apk/res/android"
-      android:id="@+id/topLayout"
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:keepScreenOn="true">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    android:orientation="vertical">
 
     <com.google.android.gms.samples.vision.barcodereader.ui.camera.CameraSourcePreview
         android:id="@+id/preview"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-      <com.google.android.gms.samples.vision.barcodereader.ui.camera.GraphicOverlay
-          android:id="@+id/graphicOverlay"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent" />
+        <com.google.android.gms.samples.vision.barcodereader.ui.camera.GraphicOverlay
+            android:id="@+id/graphicOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </com.google.android.gms.samples.vision.barcodereader.ui.camera.CameraSourcePreview>
 
-  <RelativeLayout
-      android:id="@+id/fragment_container"
-      android:layout_width="match_parent"
-      android:layout_height="100dp"
-      android:layout_marginTop="400dp"
-      android:background="@drawable/rounded_corners"
-      android:backgroundTint="#028090"
-      android:elevation="3dp"
-      android:textColor="@color/text" />
+    <Button
+        android:id="@+id/scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:text="@string/add"
+        android:textColor="@color/text"
+        android:transitionName="@string/blue_name"
 
-    </RelativeLayout>
+        />
+</RelativeLayout>

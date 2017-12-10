@@ -10,6 +10,9 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
@@ -35,15 +38,20 @@ public class AutoCompleteAdapter extends BaseAdapter implements Filterable {
         return resultList.size();
     }
 
-    public AutoCompleteAdapter getAutoCompleteAdapter(){
+    public void clearAdapter() {
+        resultList.clear();
+        Log.d("Result list", resultList.size() + "");
+    }
+
+    public AutoCompleteAdapter getAutoCompleteAdapter() {
         return this;
     }
 
-    public Code getCode(int index){
+    public Code getCode(int index) {
         return resultList.get(index);
     }
 
-    public AutoCompleteAdapter getAutoAdapter(){
+    public AutoCompleteAdapter getAutoAdapter() {
         return this;
     }
 
@@ -65,7 +73,7 @@ public class AutoCompleteAdapter extends BaseAdapter implements Filterable {
             convertView = inflater.inflate(R.layout.simple_dropdown_item_2line, parent, false);
         }
         ((TextView) convertView.findViewById(R.id.text1)).setText(getItem(position).getTitle());
-        ((TextView) convertView.findViewById(R.id.text2)).setText(getItem(position).getPrice());
+        ((TextView) convertView.findViewById(R.id.text2)).setText(getItem(position).getPrice() + "");
         return convertView;
     }
 
@@ -93,14 +101,15 @@ public class AutoCompleteAdapter extends BaseAdapter implements Filterable {
                 } else {
                     notifyDataSetInvalidated();
                 }
-            }};
+            }
+        };
         return filter;
     }
 
     // Here I retrieve stuff from the database
-    private List<Code> findBooks(Context context, String bookTitle) {
+    private List<Code> findBooks(Context context, String letter) {
         // The connection URL
-        String url = "https://frysht0l68.execute-api.us-east-2.amazonaws.com/prod/get?barcode=" + bookTitle + "";
+        String url = "https://frysht0l68.execute-api.us-east-2.amazonaws.com/prod/get?type=letter&barcode=0&letter=" + letter;
 
         // Create a new RestTemplate instance
         RestTemplate restTemplate = new RestTemplate();
@@ -114,10 +123,38 @@ public class AutoCompleteAdapter extends BaseAdapter implements Filterable {
 
         Log.d("url", url);
         Log.d("RESULT", result);
-        Code code = new Code(result);
-        List<Code> codes = new ArrayList<>();
-        codes.add(code);
 
+
+        JSONArray myarr = new JSONArray();
+        ArrayList<String> codeObj = new ArrayList<String>();
+        JSONObject codetest;
+        List<Code> codes = new ArrayList<>();
+
+        try {
+            // convert the string response from the REST request into a JSONArray object
+            myarr = new JSONArray(result);
+
+            // iterate over the JSONArray object ot get each individual item as JSONObject
+            for (int i = 0; i < myarr.length(); i++) {
+
+                //retrieve i-th element from the JSONArray
+                codetest = myarr.getJSONObject(i);
+
+                // convert the JSONObject to a Code object with a custom constructor
+                Code jsonToCode = new Code(codetest);
+
+                // add the Code object to the adapter list
+                codes.add(jsonToCode);
+
+                // Debug for errors
+                Log.d("JSONArr", myarr.toString());
+                Log.d("codeObj", codetest.toString());
+            }
+        } catch (JSONException e) {
+            Log.d("JSONException", "array conversion failed");
+        }
+
+        // return the adapter list
         return codes;
     }
 }

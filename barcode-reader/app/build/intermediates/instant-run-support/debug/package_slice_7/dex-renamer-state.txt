@@ -1,0 +1,4 @@
+#Sun Dec 10 21:47:08 EET 2017
+base.0=/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7
+renamed.0=classes.dex
+file.0=/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex

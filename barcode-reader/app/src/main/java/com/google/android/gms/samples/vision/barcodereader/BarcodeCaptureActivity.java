@@ -65,7 +65,7 @@ import java.io.IOException;
  * rear facing camera. During detection overlay graphics are drawn to indicate the position,
  * size, and ID of each barcode.
  */
-public final class BarcodeCaptureActivity extends AppCompatActivity implements BarcodeGraphicTracker.BarcodeUpdateListener{
+public final class BarcodeCaptureActivity extends AppCompatActivity implements BarcodeGraphicTracker.BarcodeUpdateListener {
     private static final String TAG = "Barcode-reader";
 
     // intent request code to handle updating play services if needed.
@@ -124,7 +124,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
                 Snackbar.LENGTH_LONG)
                 .show();
 
-        mDrawerList = (ListView)findViewById(R.id.navList);
+        mDrawerList = (ListView) findViewById(R.id.navList);
 
     }
 
@@ -176,7 +176,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
      * Creates and starts the camera.  Note that this uses a higher resolution in comparison
      * to other detection examples to enable the barcode detector to detect small barcodes
      * at long distances.
-     *
+     * <p>
      * Suppressing InlinedApi since there is a check that the minimum version is met before using
      * the constant.
      */
@@ -296,7 +296,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         if (grantResults.length != 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "Camera permission granted - initialize the camera source");
             // we have permission, so create the camerasource
-            boolean autoFocus = getIntent().getBooleanExtra(AutoFocus,false);
+            boolean autoFocus = getIntent().getBooleanExtra(AutoFocus, false);
             boolean useFlash = getIntent().getBooleanExtra(UseFlash, false);
             createCameraSource(autoFocus, useFlash);
             return;
@@ -352,7 +352,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
      * @return true if the activity is ending.
      */
     private boolean onTap(float rawX, float rawY) {
-        Log.d("entered","onTap");
+        Log.d("entered", "onTap");
         // Find tap point in preview frame coordinates.
         int[] location = new int[2];
         mGraphicOverlay.getLocationOnScreen(location);
@@ -360,7 +360,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         float y = (rawY - location[1]) / mGraphicOverlay.getHeightScaleFactor();
 
         // Find the barcode whose center is closest to the tapped point.
-        Barcode best = null;
+       Barcode best = null;
         float bestDistance = Float.MAX_VALUE;
         for (BarcodeGraphic graphic : mGraphicOverlay.getGraphics()) {
             Barcode barcode = graphic.getBarcode();
@@ -403,7 +403,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
 
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e) {
-            Log.d("entered","CaptureGestureListener");
+            Log.d("entered", "CaptureGestureListener");
             return onTap(e.getRawX(), e.getRawY()) || super.onSingleTapConfirmed(e);
         }
     }

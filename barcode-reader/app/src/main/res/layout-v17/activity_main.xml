@@ -31,9 +31,9 @@
                 android:id="@+id/search_bar"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
-                android:layout_marginTop="60dp"
                 android:layout_alignLeft="@+id/fragment_container"
                 android:layout_alignRight="@+id/fragment_container"
+                android:layout_marginTop="60dp"
                 android:background="@drawable/rounded_corners"
                 android:backgroundTint="@color/button"
                 android:elevation="10dp"
@@ -41,12 +41,12 @@
 
                 <com.google.android.gms.samples.vision.barcodereader.DelayAutoCompleteTextView
                     android:id="@+id/et_book_title"
-                    android:inputType="textCapSentences"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_above="@+id/fragment_container"
-                    android:paddingRight="@dimen/padding_auto_complete"
-                    android:imeOptions="flagNoExtractUi|actionSearch"/>
+                    android:imeOptions="flagNoExtractUi|actionSearch"
+                    android:inputType="textCapSentences"
+                    android:paddingRight="@dimen/padding_auto_complete" />
 
                 <ProgressBar
                     android:id="@+id/pb_loading_indicator"
@@ -55,22 +55,23 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|right"
                     android:layout_marginRight="@dimen/margin_default"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
             </FrameLayout>
 
             <Button
                 android:id="@+id/add_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/search_bar"
-                android:layout_alignBottom="@+id/search_bar"
-                android:layout_toRightOf="@+id/search_bar"
                 android:layout_above="@+id/bill_container"
-                android:layout_alignRight="@+id/bill_container"
+                android:layout_alignBottom="@+id/search_bar"
                 android:layout_alignLeft="@+id/bill_container"
+                android:layout_alignRight="@+id/bill_container"
+                android:layout_alignTop="@+id/search_bar"
+                android:layout_toRightOf="@+id/search_bar"
                 android:background="@drawable/rounded_corners"
                 android:text="@string/add"
                 android:textColor="@color/text"
+
                 />
 
             <TextView
@@ -96,7 +97,6 @@
 
             <TextView
                 android:id="@+id/bill_text"
-                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/autoCompleteTextView"
@@ -104,6 +104,7 @@
                 android:layout_alignRight="@+id/read_barcode"
                 android:ems="10"
                 android:text="Bill:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#000000" />
 
             <TextView
@@ -113,11 +114,11 @@
                 android:layout_alignLeft="@+id/read_barcode"
                 android:layout_alignRight="@+id/read_barcode"
                 android:layout_alignTop="@+id/fragment_container"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/rounded_corners"
                 android:backgroundTint="@color/button"
-                android:layout_marginBottom="10dp"
                 android:ems="10"
-                android:text=""
+                android:text="0"
                 android:textColor="#000000"
                 android:textStyle="bold" />
 
@@ -142,7 +143,6 @@
                 android:elevation="10dp"
                 android:src="@drawable/flash_off" />
 
-
             <Button
                 android:id="@+id/Add"
                 android:layout_width="wrap_content"
@@ -165,7 +165,8 @@
                 android:layout_marginRight="8dp"
                 android:background="@drawable/rounded_corners"
                 android:text="@string/read_barcode"
-                android:textColor="@color/text" />
+                android:textColor="@color/text"
+                android:transitionName="@string/blue_name" />
 
             <Button
                 android:id="@+id/store_map"
@@ -186,8 +187,8 @@
                 android:layout_above="@+id/read_barcode"
                 android:layout_alignLeft="@+id/read_barcode"
                 android:layout_gravity="right"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
+                android:layout_marginTop="20dp"
                 android:checked="false" />
 
             <Switch

@@ -46,7 +46,7 @@ public class ListFrag extends ListFragment {
         adapter.add(code);
     }
 
-    public ListFragAdapter getAdapter(){
+    public ListFragAdapter getAdapter() {
         return this.adapter;
     }
 }

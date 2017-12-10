@@ -68,9 +68,11 @@ public class BarcodeGraphic extends GraphicOverlay.Graphic {
         this.mId = id;
     }
 
-    protected void setPrice(String price){
+    protected void setPrice(String price) {
         this.price = price;
-    };
+    }
+
+    ;
 
     public Barcode getBarcode() {
         return mBarcode;

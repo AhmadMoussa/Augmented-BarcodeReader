@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.google.android.gms.samples.vision.barcodereader"
-    android:installLocation="auto" >
+    android:installLocation="auto">
 
-    <uses-sdk android:minSdkVersion="19"
-        android:targetSdkVersion="23"
-        android:maxSdkVersion="23" />
+    <uses-sdk
+        android:maxSdkVersion="23"
+        android:minSdkVersion="19"
+        android:targetSdkVersion="23" />
 
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 
     <application
         android:allowBackup="true"
+        android:largeHeap="true"
         android:fullBackupContent="false"
         android:hardwareAccelerated="true"
         android:icon="@drawable/icon"
         android:label="MultiTrackerApp"
-        android:supportsRtl = "true"
-        android:theme="@style/Theme.AppCompat" >
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat">
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -31,7 +33,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/title_activity_main"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,8 +42,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".BarcodeCaptureActivity"
-            android:label="Read Barcode"/>
+        <activity
+            android:name=".BarcodeCaptureActivity"
+            android:label="Read Barcode" />
     </application>
 
 </manifest>

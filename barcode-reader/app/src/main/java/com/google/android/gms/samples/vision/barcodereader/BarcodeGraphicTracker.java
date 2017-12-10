@@ -27,6 +27,8 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.Tracker;
 import com.google.android.gms.vision.barcode.Barcode;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
@@ -40,7 +42,7 @@ import org.springframework.web.client.RestTemplate;
 public class BarcodeGraphicTracker extends Tracker<Barcode> {
     private GraphicOverlay<BarcodeGraphic> mOverlay;
     private BarcodeGraphic mGraphic;
-    private String result;
+    private Code code;
 
     private BarcodeUpdateListener mBarcodeUpdateListener;
 
@@ -74,7 +76,7 @@ public class BarcodeGraphicTracker extends Tracker<Barcode> {
             @Override
             public void run() {
                 // The connection URL
-                String url = "https://frysht0l68.execute-api.us-east-2.amazonaws.com/prod/get?barcode=" + barcodeNumber + "";
+                String url = "https://frysht0l68.execute-api.us-east-2.amazonaws.com/prod/get?type=barcode&barcode=" + barcodeNumber + "&letter=0";
 
                 // Create a new RestTemplate instance
                 RestTemplate restTemplate = new RestTemplate();
@@ -84,7 +86,16 @@ public class BarcodeGraphicTracker extends Tracker<Barcode> {
 
                 Log.d("reaching here", "reachin here");
                 // Make the HTTP GET request, marshaling the response to a String
-                result = restTemplate.getForObject(url, String.class, "Android");
+                String result = restTemplate.getForObject(url, String.class, "Android");
+
+                try {
+                    JSONObject jsonObj = new JSONObject(result);
+                    Log.d("obj", jsonObj.toString());
+
+                    code = new Code(new JSONObject(result));
+                } catch (JSONException e) {
+                    Log.d("Exception", "code creation from json object");
+                }
 
                 Log.d("url", url);
             }
@@ -100,9 +111,10 @@ public class BarcodeGraphicTracker extends Tracker<Barcode> {
      */
     @Override
     public void onUpdate(Detector.Detections<Barcode> detectionResults, Barcode item) {
-        if(result != null){
-            mGraphic.setPrice(result);
-            Log.d("result", result);
+        if (code != null) {
+            String legend = "Name: " + code.getTitle() + "\nPrice: " + code.getPrice();
+            mGraphic.setPrice(legend);
+            Log.d("result", legend);
         }
         mOverlay.add(mGraphic);
         mGraphic.updateItem(item);

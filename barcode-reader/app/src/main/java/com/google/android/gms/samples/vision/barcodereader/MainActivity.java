@@ -16,6 +16,7 @@
 
 package com.google.android.gms.samples.vision.barcodereader;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.hardware.Camera;
@@ -25,11 +26,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.transition.Slide;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -75,12 +79,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private CameraView mPreview;
     private FrameLayout preview;
 
-    int THRESHOLD = 1;
+    int THRESHOLD = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupWindowAnimations();
 
         statusMessage = (TextView) findViewById(R.id.status_message);
         barcodeValue = (TextView) findViewById(R.id.barcode_value);
@@ -101,8 +106,24 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        findViewById(R.id.read_barcode).setOnClickListener(this);
+        final Button button = (Button) findViewById(R.id.read_barcode);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BarcodeCaptureActivity.class);
+                intent.putExtra(BarcodeCaptureActivity.AutoFocus, autoFocus.isChecked());
+                intent.putExtra(BarcodeCaptureActivity.UseFlash, useFlash.isChecked());
+
+                View sharedView = button;
+                String transitionName = getString(R.string.blue_name);
+
+                ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, sharedView, transitionName);
+                startActivityForResult(intent, RC_BARCODE_CAPTURE, transitionActivityOptions.toBundle());
+            }
+        });
+
         findViewById(R.id.add_item).setOnClickListener(this);
+        findViewById(R.id.store_map).setOnClickListener(this);
         mDrawerList = (ListView) findViewById(R.id.navList);
 
         ListFrag fragment = new ListFrag();
@@ -167,9 +188,15 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     }
 
+    private void setupWindowAnimations() {
+        Slide slide = new Slide();
+        slide.setDuration(1000);
+        getWindow().setExitTransition(slide);
+    }
+
     AutoCompleteAdapter autoCompleteAdapter = new AutoCompleteAdapter(this);
 
-    private void setAdapter(){
+    private void setAdapter() {
         final DelayAutoCompleteTextView itemName = (DelayAutoCompleteTextView) findViewById(R.id.et_book_title);
         itemName.setThreshold(THRESHOLD);
         itemName.setAdapter(autoCompleteAdapter); // 'this' is Activity instance
@@ -185,13 +212,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     private void setBackground() {
-        // Create an instance of Camera
-        mCamera = getCameraInstance();
-        mCamera.setDisplayOrientation(90);
-        // Create our Preview view and set it as the content of our activity.
-        mPreview = new CameraView(this, mCamera);
-        preview = (FrameLayout) findViewById(R.id.surfaceView);
-        preview.addView(mPreview);
+//        // Create an instance of Camera
+//        mCamera = getCameraInstance();
+//        mCamera.setDisplayOrientation(90);
+//        // Create our Preview view and set it as the content of our activity.
+//        mPreview = new CameraView(this, mCamera);
+//        preview = (FrameLayout) findViewById(R.id.surfaceView);
+//        preview.addView(mPreview);
     }
 
     @Override
@@ -289,6 +316,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.read_barcode) {
+
             // launch barcode activity.
             Intent intent = new Intent(this, BarcodeCaptureActivity.class);
             intent.putExtra(BarcodeCaptureActivity.AutoFocus, autoFocus.isChecked());
@@ -296,26 +324,35 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             startActivityForResult(intent, RC_BARCODE_CAPTURE);
         }
 
-        if(v.getId() == R.id.add_item) {
-            if(autoCompleteAdapter.getCount() == 0) {
+        if (v.getId() == R.id.add_item) {
+            if (autoCompleteAdapter.getCount() == 0 ||
+                    ((AutoCompleteTextView) this.findViewById(R.id.et_book_title)).getText().equals("")) {
                 Toast.makeText(this, "Please search for an item!",
                         Toast.LENGTH_LONG).show();
                 return;
             }
             Code code = autoCompleteAdapter.getItem(0);
+            Log.d("AUTO COMPLETE ADAPTER", autoCompleteAdapter.getCount() + "");
+            autoCompleteAdapter.clearAdapter();
+            Log.d("AUTO COMPLETE ADAPTER ", autoCompleteAdapter.getCount() + "");
+            View bar = this.findViewById(R.id.et_book_title);
+            ((AutoCompleteTextView) bar).setText("");
             ListFrag list = (ListFrag) fragmentManager.findFragmentById(R.id.fragment_container);
-            code.setPrice("1.99");
             list.addItems(code);
+            updatePrice(list);
+        }
+
+        if (v.getId() == R.id.store_map) {
+//            // launch barcode activity.
+//            Intent intent = new Intent(this, ChooseStore.class);
+//            startActivity(intent);
         }
     }
 
-    public void updatePrice(View v, ListFrag list){
+    public void updatePrice(ListFrag list) {
         double total = 0;
-        for(int i = 0; i < list.getListAdapter().getCount(); i++){
-            total += list.getAdapter().getPrice(i);
-        }
-        TextView tv = (TextView) v.findViewById(R.id.bill_container);
-        tv.setText(total + "");
+        TextView tv = (TextView) this.findViewById(R.id.bill_container);
+        tv.setText(list.getAdapter().getTotal() + "");
     }
 
     /**
@@ -342,23 +379,23 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == RC_BARCODE_CAPTURE) {
-            if (resultCode == CommonStatusCodes.SUCCESS) {
-                if (data != null) {
-                    Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
-                    statusMessage.setText(R.string.barcode_success);
-                    barcodeValue.setText(barcode.displayValue);
-                    Log.d(TAG, "Barcode read: " + barcode.displayValue);
-                } else {
-                    statusMessage.setText(R.string.barcode_failure);
-                    Log.d(TAG, "No barcode captured, intent data is null");
-                }
-            } else {
-                statusMessage.setText(String.format(getString(R.string.barcode_error),
-                        CommonStatusCodes.getStatusCodeString(resultCode)));
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
+//        if (requestCode == RC_BARCODE_CAPTURE) {
+//            if (resultCode == CommonStatusCodes.SUCCESS) {
+//                if (data != null) {
+//                    Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
+//                    statusMessage.setText(R.string.barcode_success);
+//                    barcodeValue.setText(barcode.displayValue);
+//                    Log.d(TAG, "Barcode read: " + barcode.displayValue);
+//                } else {
+//                    statusMessage.setText(R.string.barcode_failure);
+//                    Log.d(TAG, "No barcode captured, intent data is null");
+//                }
+//            } else {
+//                statusMessage.setText(String.format(getString(R.string.barcode_error),
+//                        CommonStatusCodes.getStatusCodeString(resultCode)));
+//            }
+//        } else {
+//            super.onActivityResult(requestCode, resultCode, data);
+//        }
     }
 }

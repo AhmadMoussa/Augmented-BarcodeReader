@@ -11,27 +11,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class CustomDialogFragment extends DialogFragment implements TextView.OnEditorActionListener
-{
+public class CustomDialogFragment extends DialogFragment implements TextView.OnEditorActionListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
-    {
+                             Bundle savedInstanceState) {
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState)
-    {
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Set a theme on the dialog builder constructor!
         AlertDialog.Builder builder =
-                new AlertDialog.Builder( getActivity(), R.style.MyCustomTheme );
+                new AlertDialog.Builder(getActivity(), R.style.MyCustomTheme);
 
         builder
-                .setTitle( "Your title" )
-                .setMessage( "Your message" )
-                .setPositiveButton( "OK" , new DialogInterface.OnClickListener()
-                {
+                .setTitle("Your title")
+                .setMessage("Your message")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dismiss();
