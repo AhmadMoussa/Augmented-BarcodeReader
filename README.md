@@ -50,7 +50,7 @@ AWS Lambda is a splendid tool for that purpose, where we can programmatically sw
 This is done by a consuming a restful webservice, using the springboot framework, the barcode trakcer creates an ASYNCTask that fires a web request to our Lambda function (through the API gateway), which in turn contacts dynamodb and queries the requested rows and returns them in a callback. Once those results arrive at the application the UI updates and displays the information.
 
 On the front end the request is instantiated as such:
-```
+```java
 AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
@@ -78,7 +78,7 @@ AsyncTask.execute(new Runnable() {
 ```
 
 And the response:
-```
+```nodejs
 exports.handle = function(e,ctx,callback) {
     if(e.type == "letter"){
         var params = {
