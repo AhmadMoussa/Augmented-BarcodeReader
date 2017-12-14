@@ -32,6 +32,7 @@ public class ListFrag extends ListFragment {
         super.onActivityCreated(savedInstanceState);
         adapter = new ListFragAdapter(getActivity(), (ArrayList<Code>) codes);
         setListAdapter(adapter);
+        setEmptyText("You shopping list looks pretty empty, try adding some items above!");
     }
 
     @Override
@@ -42,8 +43,8 @@ public class ListFrag extends ListFragment {
     //METHOD WHICH WILL HANDLE DYNAMIC INSERTION
     public void addItems(Code code) {
         System.out.println("hi");
-        adapter.notifyDataSetChanged();
         adapter.add(code);
+        adapter.notifyDataSetChanged();
     }
 
     public ListFragAdapter getAdapter() {

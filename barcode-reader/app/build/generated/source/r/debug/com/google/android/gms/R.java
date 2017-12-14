@@ -16,22 +16,22 @@ public final class R {
         public static final int scopeUris = 0x7f0100fc;
     }
     public static final class color {
-        public static final int common_google_signin_btn_text_dark = 0x7f0b0069;
+        public static final int common_google_signin_btn_text_dark = 0x7f0b006a;
         public static final int common_google_signin_btn_text_dark_default = 0x7f0b0013;
         public static final int common_google_signin_btn_text_dark_disabled = 0x7f0b0014;
         public static final int common_google_signin_btn_text_dark_focused = 0x7f0b0015;
         public static final int common_google_signin_btn_text_dark_pressed = 0x7f0b0016;
-        public static final int common_google_signin_btn_text_light = 0x7f0b006a;
+        public static final int common_google_signin_btn_text_light = 0x7f0b006b;
         public static final int common_google_signin_btn_text_light_default = 0x7f0b0017;
         public static final int common_google_signin_btn_text_light_disabled = 0x7f0b0018;
         public static final int common_google_signin_btn_text_light_focused = 0x7f0b0019;
         public static final int common_google_signin_btn_text_light_pressed = 0x7f0b001a;
-        public static final int common_plus_signin_btn_text_dark = 0x7f0b006b;
+        public static final int common_plus_signin_btn_text_dark = 0x7f0b006c;
         public static final int common_plus_signin_btn_text_dark_default = 0x7f0b001b;
         public static final int common_plus_signin_btn_text_dark_disabled = 0x7f0b001c;
         public static final int common_plus_signin_btn_text_dark_focused = 0x7f0b001d;
         public static final int common_plus_signin_btn_text_dark_pressed = 0x7f0b001e;
-        public static final int common_plus_signin_btn_text_light = 0x7f0b006c;
+        public static final int common_plus_signin_btn_text_light = 0x7f0b006d;
         public static final int common_plus_signin_btn_text_light_default = 0x7f0b001f;
         public static final int common_plus_signin_btn_text_light_disabled = 0x7f0b0020;
         public static final int common_plus_signin_btn_text_light_focused = 0x7f0b0021;
@@ -93,9 +93,9 @@ public final class R {
         public static final int normal = 0x7f0c000c;
         public static final int radio = 0x7f0c0061;
         public static final int standard = 0x7f0c003e;
-        public static final int text = 0x7f0c00a9;
-        public static final int text1 = 0x7f0c00ac;
-        public static final int text2 = 0x7f0c00a7;
+        public static final int text = 0x7f0c00a8;
+        public static final int text1 = 0x7f0c00ab;
+        public static final int text2 = 0x7f0c00a6;
         public static final int wide = 0x7f0c003f;
         public static final int wrap_content = 0x7f0c0020;
     }

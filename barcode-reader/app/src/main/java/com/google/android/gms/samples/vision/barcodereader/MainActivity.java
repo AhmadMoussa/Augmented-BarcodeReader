@@ -79,13 +79,14 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private CameraView mPreview;
     private FrameLayout preview;
 
+
     int THRESHOLD = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setupWindowAnimations();
+        //setupWindowAnimations();
 
         statusMessage = (TextView) findViewById(R.id.status_message);
         barcodeValue = (TextView) findViewById(R.id.barcode_value);
@@ -106,27 +107,30 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
-        final Button button = (Button) findViewById(R.id.read_barcode);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BarcodeCaptureActivity.class);
-                intent.putExtra(BarcodeCaptureActivity.AutoFocus, autoFocus.isChecked());
-                intent.putExtra(BarcodeCaptureActivity.UseFlash, useFlash.isChecked());
-
-                View sharedView = button;
-                String transitionName = getString(R.string.blue_name);
-
-                ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, sharedView, transitionName);
-                startActivityForResult(intent, RC_BARCODE_CAPTURE, transitionActivityOptions.toBundle());
-            }
-        });
+        Button button = (Button) findViewById(R.id.read_barcode);
+        button.setOnClickListener(this);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, BarcodeCaptureActivity.class);
+//                intent.putExtra(BarcodeCaptureActivity.AutoFocus, autoFocus.isChecked());
+//                intent.putExtra(BarcodeCaptureActivity.UseFlash, useFlash.isChecked());
+//
+//                View sharedView = button;
+//                String transitionName = getString(R.string.blue_name);
+//
+//                ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, sharedView, transitionName);
+//                startActivityForResult(intent, RC_BARCODE_CAPTURE, transitionActivityOptions.toBundle());
+//            }
+//        });
 
         findViewById(R.id.add_item).setOnClickListener(this);
         findViewById(R.id.store_map).setOnClickListener(this);
         mDrawerList = (ListView) findViewById(R.id.navList);
 
         ListFrag fragment = new ListFrag();
+
+
         fragmentTransaction.add(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
 //
@@ -186,12 +190,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 //            Log.d("Yep","it does exist");
 //        }
 
-    }
-
-    private void setupWindowAnimations() {
-        Slide slide = new Slide();
-        slide.setDuration(1000);
-        getWindow().setExitTransition(slide);
     }
 
     AutoCompleteAdapter autoCompleteAdapter = new AutoCompleteAdapter(this);
@@ -325,20 +323,32 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.add_item) {
+            System.out.println(autoCompleteAdapter.getCount());
+            System.out.println(((AutoCompleteTextView) this.findViewById(R.id.et_book_title)).getText());
             if (autoCompleteAdapter.getCount() == 0 ||
                     ((AutoCompleteTextView) this.findViewById(R.id.et_book_title)).getText().equals("")) {
                 Toast.makeText(this, "Please search for an item!",
                         Toast.LENGTH_LONG).show();
                 return;
             }
-            Code code = autoCompleteAdapter.getItem(0);
+
+            //Copy constrcutor to create a new code item from the first/selected item in adapter
+            Code code = new Code(autoCompleteAdapter.getItem(0));
             Log.d("AUTO COMPLETE ADAPTER", autoCompleteAdapter.getCount() + "");
+
+            //Clear Adapter
             autoCompleteAdapter.clearAdapter();
             Log.d("AUTO COMPLETE ADAPTER ", autoCompleteAdapter.getCount() + "");
+
+            //Clear search bar
             View bar = this.findViewById(R.id.et_book_title);
             ((AutoCompleteTextView) bar).setText("");
+
+            // Get list fragment in view and add the newly created code to it
             ListFrag list = (ListFrag) fragmentManager.findFragmentById(R.id.fragment_container);
             list.addItems(code);
+
+            //update the prices
             updatePrice(list);
         }
 

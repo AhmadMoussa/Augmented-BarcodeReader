@@ -4,18 +4,16 @@
 
         <shape>
             <gradient android:angle="270"
-                android:endColor="#f0f3bd" android:startColor="#f0f3bd" />
+                android:endColor="#FF9800" android:startColor="#FF9800" />
             <padding
                 android:top="2dp"
                 android:bottom="2dp"/>
-            <stroke android:width="1dp" android:color="#BABABA" />
 
             <corners
-                android:bottomRightRadius="10dp"
-                android:bottomLeftRadius="10dp"
-                android:topLeftRadius="10dp"
-                android:topRightRadius="10dp"/>
-
+                android:bottomRightRadius="5dp"
+                android:bottomLeftRadius="5dp"
+                android:topLeftRadius="5dp"
+                android:topRightRadius="5dp"/>
         </shape>
     </item>
 </selector>

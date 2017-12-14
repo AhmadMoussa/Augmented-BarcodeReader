@@ -384,11 +384,9 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
 //            RelativeLayout container = (RelativeLayout) findViewById(R.id.fragment_container);
 //            container.setBackgroundDrawable(R.drawable.rounded_corners);
 
-            fragmentTransaction.add(R.id.fragment_container, fragment);
-            fragmentTransaction.commit();
-//            Intent data = new Intent();
-//            data.putExtra(BarcodeObject, best);
-//            setResult(CommonStatusCodes.SUCCESS, data);
+            Intent data = new Intent();
+            data.putExtra(BarcodeObject, best);
+            setResult(CommonStatusCodes.SUCCESS, data);
 //            killActivity();
             return true;
         }

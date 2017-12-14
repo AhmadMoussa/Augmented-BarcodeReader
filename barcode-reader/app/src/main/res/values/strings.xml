@@ -23,6 +23,7 @@
     // UI colors
     <color name="green1">#fce4ec</color>
     <color name="text">#000000</color>
-    <color name="button">#f0f3bd</color>
+    <color name="button">#FF9800</color>
+    <color name="white">#FFFFFF</color>
 
 </resources>

@@ -18,15 +18,4 @@
             android:layout_height="match_parent" />
 
     </com.google.android.gms.samples.vision.barcodereader.ui.camera.CameraSourcePreview>
-
-    <Button
-        android:id="@+id/scan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_corners"
-        android:text="@string/add"
-        android:textColor="@color/text"
-        android:transitionName="@string/blue_name"
-
-        />
 </RelativeLayout>

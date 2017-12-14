@@ -45,6 +45,13 @@ public class Code {
         setQuantity(1);
     }
 
+    Code(Code code){
+        setTitle(code.getTitle());
+        setDescription(code.getDescription());
+        setBarcode(code.getBarcode());
+        setPrice(code.getPrice());
+    }
+
     public void setFromJSON(JSONObject obj) {
         try {
             setTitle(obj.getString("BarName"));

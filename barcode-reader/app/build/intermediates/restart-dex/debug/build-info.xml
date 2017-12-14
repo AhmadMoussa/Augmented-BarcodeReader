@@ -6,7 +6,7 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1512935411280"
+    timestamp="1513264914822"
     token="6797254257211347094"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -29,11 +29,11 @@
 
     <build
         build-mode="FULL"
-        timestamp="1512935108989"
+        timestamp="1513264642134"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
+            location="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/outputs/apk/app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
@@ -50,6 +50,9 @@
             location="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
+            location="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
             location="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
@@ -64,21 +67,10 @@
         <artifact
             location="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
-        <artifact
-            location="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/outputs/apk/app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1512935211403"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1512935411280"
+        timestamp="1513264914822"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/outputs/apk/app-debug.apk"
