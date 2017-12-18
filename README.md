@@ -1,10 +1,14 @@
 # Project Overview: 
 
+EasyShop is an application that aims at simplifying the daily task of acquiring items from retail stores. Though initially the software idea was different, it morphed over the course of the semester into what it is now. Spanning many useful features, that can be used by users of any age, it provides a tool to seek and scour any store and find what is desired. The target Audience of our application is mainly those who need help finding, choosing and requiring additional information about items; store owners and/or employees that want to dynamically add offers or change prices on products without having to change numerous labels, as well as software developers that have a similar idea in mind and want to build on a solid starting point; hence the application is hosted on github and will be open source. 
+
+# Demo: 
+
+Click on the thumbnail below to watch a short video about the project
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/mHccWXMDOkA/0.jpg)](https://www.youtube.com/watch?v=mHccWXMDOkA)
 
-EasyShop is an application that aims at simplifying the daily task of acquiring items from retail stores. Though initially the software idea was different, it morphed over the course of the semester into what it is now. Spanning many useful features, that can be used by users of any age, it provides a tool to seek and scour any store and find what is desired. The target Audience of our application is mainly those who need help finding, choosing and requiring additional information about items; store owners and/or employees that want to dynamically add offers or change prices on products without having to change numerous labels, as well as software developers that have a similar idea in mind and want to build on a solid starting point; hence the application is hosted on github and will be open source. 
- 
-## Resources used: 
+## Resources Used:
+### Software: 
   * Android Studio 
   * Gradle
   * Google mobile vision API - multi tracker API 
@@ -19,13 +23,12 @@ EasyShop is an application that aims at simplifying the daily task of acquiring 
   * Unity
   * Vuforia
  
-## Languages used:
+### Programming Languages:
  * C/C++
  * Java
  * Javascript
  * Nodejs
  * Python 
- 
  
 ## Initial Idea - Problems and Solutions 
 The initial conception of the application was a hands-on tool that can be used with Google-Cardboard to provide an AR experience while shopping for items, such that prices are displayed with big, bright, 3 dimensional number above their respective barcodes as well as advertisements that pop up here and there inside the store to promote items. That soon turned out to be not applicable, Google cardboard (which is one of the affordable VR/AR head sets) turned out to have a too narrow field of view to turn the concept into reality. We stuck to the barcode detection feature, because it is a must have, and no other application on the app store or google play does it nearly as well. The rest of the application evolved down the road, where gps location and store selection was added as well as a shopping list that acts as a quasi reminder. 
