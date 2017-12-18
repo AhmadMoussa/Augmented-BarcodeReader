@@ -1,4 +1,7 @@
 # Project Overview: 
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/mHccWXMDOkA/0.jpg)](https://www.youtube.com/watch?v=mHccWXMDOkA)
+
 EasyShop is an application that aims at simplifying the daily task of acquiring items from retail stores. Though initially the software idea was different, it morphed over the course of the semester into what it is now. Spanning many useful features, that can be used by users of any age, it provides a tool to seek and scour any store and find what is desired. The target Audience of our application is mainly those who need help finding, choosing and requiring additional information about items; store owners and/or employees that want to dynamically add offers or change prices on products without having to change numerous labels, as well as software developers that have a similar idea in mind and want to build on a solid starting point; hence the application is hosted on github and will be open source. 
  
 ## Resources used: 
