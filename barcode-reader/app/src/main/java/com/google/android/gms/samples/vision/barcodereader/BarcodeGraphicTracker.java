@@ -66,6 +66,10 @@ public class BarcodeGraphicTracker extends Tracker<Barcode> {
         }
     }
 
+    public Code getCode(){
+        return this.code;
+    }
+
     /**
      * Start tracking the detected item instance within the item overlay.
      */
@@ -112,6 +116,7 @@ public class BarcodeGraphicTracker extends Tracker<Barcode> {
     @Override
     public void onUpdate(Detector.Detections<Barcode> detectionResults, Barcode item) {
         if (code != null) {
+            mGraphic.setCode(code);
             String legend = "Name: " + code.getTitle() + "\nPrice: " + code.getPrice();
             mGraphic.setPrice(legend);
             Log.d("result", legend);

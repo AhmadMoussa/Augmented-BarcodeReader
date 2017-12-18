@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.google.android.gms.samples.vision.barcodereader"
@@ -33,17 +32,29 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:support-v4:24.2.0'
+
     // Important - the CameraSource implementation in this project requires version 8.1 or higher.
-    compile 'com.google.android.gms:play-services-vision:9.4.0+'
+    compile 'com.google.android.gms:play-services-vision:11.0.4'
+    compile 'com.google.android.gms:play-services-maps:11.0.4'
+    compile 'com.google.android.gms:play-services-location:11.0.4'
     compile 'com.android.support:design:24.2.0'
-    //springboot and jackson to process JSON
+
+    implementation 'com.android.support:support-compat:24.2.0'
+    //Springboot for REST requests and jackson to process JSON
     compile 'com.fasterxml.jackson.core:jackson-databind:2.3.2'
     compile 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
 
     compile 'com.android.support:appcompat-v7:24.2.0'
 
+    //Swipe layout for the deletables in the listview
     compile 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.0'
-
-    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'com.android.support:recyclerview-v7:24.2.0'
     compile "com.daimajia.swipelayout:library:1.2.0@aar"
+
+    //Firebase dependencies
+    //compile 'com.google.firebase:firebase-database:11.0.4'
+    //compile 'com.google.firebase:firebase-messaging:11.0.4'
+
+    //constraint layout
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }

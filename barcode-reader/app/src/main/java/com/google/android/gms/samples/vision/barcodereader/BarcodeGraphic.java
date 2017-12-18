@@ -44,6 +44,9 @@ public class BarcodeGraphic extends GraphicOverlay.Graphic {
     private volatile Barcode mBarcode;
     private String price;
 
+    //cheaitng the system save the code object inside the graphic that is displayed on screen huehue
+    private Code code;
+
     BarcodeGraphic(GraphicOverlay overlay) {
         super(overlay);
 
@@ -72,7 +75,13 @@ public class BarcodeGraphic extends GraphicOverlay.Graphic {
         this.price = price;
     }
 
-    ;
+    protected void setCode(Code code) {
+        this.code = new Code(code);
+    }
+
+    protected Code getCode() {
+        return this.code;
+    }
 
     public Barcode getBarcode() {
         return mBarcode;

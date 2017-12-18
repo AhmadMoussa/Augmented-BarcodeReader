@@ -1,7 +1,7 @@
-#Thu Dec 14 17:24:39 EET 2017
+#Sat Dec 16 03:26:22 EET 2017
 base.0=/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_62817db37dbfe7f38d94a58039c4fca5f517a500
-renamed.1=classes.dex
-renamed.0=classes2.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
 file.1=/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8e9594d7e1219f1dd178dea8bad0e58bdfc6a607/classes.dex
 base.1=/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8e9594d7e1219f1dd178dea8bad0e58bdfc6a607
 file.0=/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_62817db37dbfe7f38d94a58039c4fca5f517a500/classes.dex

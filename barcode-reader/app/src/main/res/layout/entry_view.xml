@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:id="@+id/choose_store"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="30dp"
+        android:text="Choose store"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/choose_store"
+        android:layout_alignTop="@+id/choose_store"
+        android:layout_alignBottom="@+id/choose_store"
+        android:layout_marginLeft="10dp"
+        android:text="Choose a store from the map"
+        android:textAlignment="viewStart"
+        android:paddingTop="8dp"
+        />
+
+    <Button
+        android:id="@+id/add_items"
+        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/choose_store"
+        android:text="Add items"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/add_items"
+        android:layout_alignTop="@+id/add_items"
+        android:layout_alignBottom="@+id/add_items"
+        android:layout_marginLeft="10dp"
+        android:text="Begin adding Items"
+        android:textAlignment="viewStart"
+        android:paddingTop="8dp"
+        />
+
+    <Button
+        android:id="@+id/map_to_store"
+        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/add_items"
+        android:text="To store"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/map_to_store"
+        android:layout_alignTop="@+id/map_to_store"
+        android:layout_alignBottom="@+id/map_to_store"
+        android:layout_marginLeft="10dp"
+        android:text="Find your way to the store"
+        android:textAlignment="viewStart"
+        android:paddingTop="8dp"
+        />
+
+    <Button
+        android:id="@+id/map_in_store"
+        android:layout_height="50dp"
+        android:layout_width="100dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@+id/map_to_store"
+        android:text="In store map"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/map_in_store"
+        android:layout_alignTop="@+id/map_in_store"
+        android:layout_alignBottom="@+id/map_in_store"
+        android:layout_marginLeft="10dp"
+        android:text="Find your items inside the store"
+        android:textAlignment="viewStart"
+        android:paddingTop="8dp"
+        />
+
+</RelativeLayout>

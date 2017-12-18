@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.google.android.gms:play-services-vision-common-11.0.4">
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/gradle/gradle-3.2/caches/transforms-1/files-1.1/play-services-vision-common-11.0.4.aar/faaf560aad38b7ee5c1b59200607a1c4/jars/classes.jar!/" />
+      <root url="file://$APPLICATION_HOME_DIR$/gradle/gradle-3.2/caches/transforms-1/files-1.1/play-services-vision-common-11.0.4.aar/faaf560aad38b7ee5c1b59200607a1c4/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

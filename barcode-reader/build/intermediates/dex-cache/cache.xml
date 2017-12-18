@@ -3,6 +3,69 @@
 
     <item
         is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/1aba58d71809b4d1bf9345f8560323d98c653e68/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e84b30031d4bab89a2b5c45af4eb9213828524dd">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3e9bd9a17d3f8f35e1d28e1657f6d76bebe5e119/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/58056ec8ba13ef7a18ffaf214460be02b6de19f0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1b12397bc9f342b29d9e9108978828f99a6da579">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9141c614d3f59e821214f07da644bab5de34abfb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/edda51563574c136d33288884b52f891858213a6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7c24e2e9773fb498e390ce973db382c3ddcf748e">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7541d1736c0383536bebf5657381c9434b003d72/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/6c685bec536a25ba2b7001f9054cfa6a7e5fc4aa/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ed87ccdcb70c17d71ba4e6e4ac16afa62d3c49fb">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ec5942c8c7c0f32bf96b966d214ac765afb9bc97/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/3ecdf3cb664e77c00bb0680afdfe7631522cd9d1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f17f8050a131a01d0f16f6bdcaa9fbc9334f7b18/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/ad17d26f68e34beea77c5988e00e81b6d4c42378/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c48cab39c1602bb04fbc7838e4171e145c3817f8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/d84425be1d48aae5a5efc239d369b4828f68f7e0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fcae52a60bc07924d370b4d376116cd8f8581f54">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5f17f4db09f58d82ce949957f4392c604bfa1d38/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Applications/Android Studio.app/Contents/gradle/gradle-3.2/caches/modules-2/files-2.1/org.springframework.android/spring-android-core/2.0.0.M3/c7e2c60943248bbce5de6cf552592281ed2296b/spring-android-core-2.0.0.M3.jar"
         jumboMode="true"
         optimize="true"
@@ -21,12 +84,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/christinebaertl/.android/build-cache/c65100875e828451414d7806ea44d8ffa76087f1/output/jars/classes.jar"
+        jar="/Users/christinebaertl/.android/build-cache/11c6e808378d699e995cd9029886cf7b9173ea03/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="e84b30031d4bab89a2b5c45af4eb9213828524dd">
-        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_77711ce744c8d4cdf71691a385c3f5c7be71388d/classes.dex" />
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d413e3889b48bce222e142eae4cd7411e8d8caf2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/413b7fb04453be5661d8a410edca11e60c46e1c9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f47f4d5bdfd7d7bf330945b8a7ccce4ab437a710">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_95edb9b215c9b87d9c41e860bb7abca2fc9f1151/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -39,30 +111,30 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/christinebaertl/.android/build-cache/5b47307743771b742294fe682e64f6b182c2da4a/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="277028fe7c8a71a6ede25cfd136d88c14fa5941f">
-        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_62817db37dbfe7f38d94a58039c4fca5f517a500/classes.dex" />
+        sha1="41f47bbcd281fdb1e42e220220ab3bfa1da591e0">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0d1ae0c0246de0530a8994d8ddb6901dc62076cd/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/christinebaertl/.android/build-cache/5559eb44fb8b8b18a157fbccdc7330b4eed0c806/output/jars/classes.jar"
+        jar="/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="0383ea061ff92aff86cc8e899378170e19319a2c">
-        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e55ea80a6874ea18702179513413e82a0d690ee4/classes.dex" />
+        sha1="70ffe00aaf049893f59d1dad57bd82992faa38ef">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8c10bc91c92634c8774560d26466ea02736f4451/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Applications/Android Studio.app/Contents/gradle/gradle-3.2/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.3.2/559b70ac8a0d5cad611da4223137a920147201ba/jackson-core-2.3.2.jar"
+        jar="/Users/christinebaertl/.android/build-cache/e6735aac06b29b4bb4ac61f7bb3ae506479bb76a/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="559b70ac8a0d5cad611da4223137a920147201ba">
-        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-core-2.3.2_7b6f83098306e3ec3851d7d4b8b029805bfb243d/classes.dex" />
+        sha1="2430e711762a749feb00b3d64858ca4768251b9d">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_0ab873bcf72bcf1c7327c7ab8752d4358bb1e5b8/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -72,6 +144,105 @@
         revision="25.0.0"
         sha1="c75edc740a6d8cb1cef6fa82fa594e0bce561916">
         <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-databind-2.3.2_b093e5db63c40adc0e50effc31cf2c70e13c1fe9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.2.0/support-annotations-25.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.2.0_63f93335be76915dc487946eaa79bfa816603c74/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/7ef9ed567982d991628d96ab77ebeef832ec5a6a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fa0446a14ed5dd3725047d6399ffea771a564b30">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ddb1aa2080e46eb9bb304470759199779afbca13/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/caf4ee6d8c9c55f2b1b3c9c7d3581ddd16c7599d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_878d66e915e8087f85bcbc0808166eb725f678f3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/ba25ba99233f91a09f56afd33c50ca3ad2ffc7c1/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43e9789bd3240271265ab30ce1be9f224843f5a8">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e2169c245da8c357449d5a1b9b3ba0651029181b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/706efce23b41d0eef3c995e6aba7628d965cd68a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6b3430725095bd46b785e97bd34240826c27b4db">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_90892cae59bbdfab6a55d4021812b18f9963ab30/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/ace1b0cd11640b1dfabd50eaa3693711461a8819/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_baf637e25b48bfc1a1cb079a61feddde775dadfd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/b65ac9e509049562d9abb26fc3fb5117f64a6038/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="63b03eaa1aa9b9431c7638841175f9842dcbf274">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_333dd7fc8bc6770258db18e5016354ee768d51c8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/7d4f8e7c875c497b1c94d70a5caf14313bcff992/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0383ea061ff92aff86cc8e899378170e19319a2c">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_76819df35b5d0fd76e6adfa7640673c231dc915a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/.android/build-cache/810ec8f138d6d147e7bcb8933a51c2f69fbd5a8d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="364364bf77b4a71afc5930fc3ae57b3f0eea637c">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a17a1ea7263d69ac3b3a13f7ed4598c1c9a2917c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d96aa6e169b66ec45e1add8895138e93d5cc4e43">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_62817db37dbfe7f38d94a58039c4fca5f517a500/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Applications/Android Studio.app/Contents/gradle/gradle-3.2/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.3.2/559b70ac8a0d5cad611da4223137a920147201ba/jackson-core-2.3.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="559b70ac8a0d5cad611da4223137a920147201ba">
+        <dex dex="/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-core-2.3.2_7b6f83098306e3ec3851d7d4b8b029805bfb243d/classes.dex" />
     </item>
     <item
         is-multidex="true"

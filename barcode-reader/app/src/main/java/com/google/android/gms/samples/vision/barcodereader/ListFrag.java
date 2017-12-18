@@ -42,7 +42,6 @@ public class ListFrag extends ListFragment {
 
     //METHOD WHICH WILL HANDLE DYNAMIC INSERTION
     public void addItems(Code code) {
-        System.out.println("hi");
         adapter.add(code);
         adapter.notifyDataSetChanged();
     }
@@ -50,4 +49,5 @@ public class ListFrag extends ListFragment {
     public ListFragAdapter getAdapter() {
         return this.adapter;
     }
+    public List<Code> getCodes(){return this.codes;}
 }

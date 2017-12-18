@@ -4,7 +4,7 @@
     <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
-    <string name="title_activity_main">Barcode Reader Sample</string>
+    <string name="title_activity_main">Easy Shop</string>
     <string name="barcode_header">Click &quot;Read Barcode&quot; to read a barcode</string>
     <string name="read_barcode">Scan</string>
     <string name="store_map">View map</string>
@@ -13,6 +13,9 @@
     <string name="barcode_success">Barcode read successfully</string>
     <string name="barcode_failure">No barcode captured</string>
     <string name="barcode_error">"Error reading barcode: %1$s"</string>
+
+    <string name="app_name">My Application</string>
+    <string name="title_activity_maps">Map</string>
 
     // navigation drawer toggle string resources
     <string name="drawer_open">Open navigation drawer</string>
@@ -25,5 +28,6 @@
     <color name="text">#000000</color>
     <color name="button">#FF9800</color>
     <color name="white">#FFFFFF</color>
-
+    <color name="divider">#BDBDBD</color>
+    <color name="secondary">#757575</color>
 </resources>

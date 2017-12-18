@@ -1,22 +1,29 @@
 package com.google.android.gms.samples.vision.barcodereader;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+
 /**
  * Created by christinebaertl on 05.12.17.
  */
 
-public class Code {
+public class Code implements Serializable{
 
     private int id;
-    private String title;
-    private double price;
-    private String barcode;
-    private String description;
+    private String BarName;
+    private double Price;
+    private String Barcode;
+    private String Description;
     private int quantity;
+    private String X;
+    private String Y;
+    private boolean inCart = false;
 
     Code() {
 
@@ -28,6 +35,8 @@ public class Code {
             setDescription(obj.getString("Description"));
             setBarcode(obj.getString("Barcode"));
             setPrice(Double.parseDouble(obj.getString("Price")));
+            setX(obj.getString("X"));
+            setY(obj.getString("Y"));
         } catch (JSONException e) {
             Log.d("Exception", "couldn't set");
         }
@@ -58,25 +67,31 @@ public class Code {
             setDescription(obj.getString("Description"));
             setBarcode(obj.getString("Barcode"));
             setPrice(Double.parseDouble(obj.getString("Price")));
+            setX(obj.getString("X"));
+            setY(obj.getString("Y"));
         } catch (JSONException e) {
             Log.d("Exception", "couldn't set");
         }
     }
 
+    public String getAsJSON(){
+        return "{BarName:" + this.BarName + "}";
+    }
+
     private void setTitle(String title) {
-        this.title = title;
+        this.BarName = title;
     }
 
     protected String getTitle() {
-        return this.title;
+        return this.BarName;
     }
 
     protected void setPrice(double price) {
-        this.price = price;
+        this.Price = price;
     }
 
     protected double getPrice() {
-        return this.price;
+        return this.Price;
     }
 
     private void setQuantity(int qt) {
@@ -88,19 +103,19 @@ public class Code {
     }
 
     private void setBarcode(String barcode) {
-        this.barcode = barcode;
+        this.Barcode = barcode;
     }
 
     protected String getBarcode() {
-        return this.barcode;
+        return this.Barcode;
     }
 
     private void setDescription(String description) {
-        this.description = description;
+        this.Description = description;
     }
 
     protected String getDescription() {
-        return this.description;
+        return this.Description;
     }
 
     protected void setId(int id) {
@@ -109,5 +124,30 @@ public class Code {
 
     protected int getId() {
         return this.id;
+    }
+
+
+    protected void setX(String x) {
+        this.X = x;
+    }
+
+    protected String getX() {
+        return this.X;
+    }
+
+    protected void setY(String y) {
+        this.Y = y;
+    }
+
+    protected String getY() {
+        return this.Y;
+    }
+
+    protected boolean getInCart(){
+        return this.inCart;
+    }
+
+    protected void setInCart(boolean inCart){
+            this.inCart = inCart;
     }
 }

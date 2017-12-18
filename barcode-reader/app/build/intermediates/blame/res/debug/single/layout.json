@@ -92,6 +92,10 @@
         "source": "/Users/christinebaertl/.android/build-cache/773a980274f28cf6d553dbb6c393d825cb8544cf/output/res/layout/abc_activity_chooser_view.xml"
     },
     {
+        "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/layout/activity_choose_store.xml",
+        "source": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/src/main/res/layout/activity_choose_store.xml"
+    },
+    {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
         "source": "/Users/christinebaertl/.android/build-cache/773a980274f28cf6d553dbb6c393d825cb8544cf/output/res/layout/notification_template_media.xml"
     },
@@ -138,6 +142,10 @@
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
         "source": "/Users/christinebaertl/.android/build-cache/773a980274f28cf6d553dbb6c393d825cb8544cf/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/layout/popup_frag.xml",
+        "source": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/src/main/res/layout/popup_frag.xml"
     },
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",

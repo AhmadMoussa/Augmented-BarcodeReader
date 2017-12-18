@@ -1,7 +1,7 @@
 [
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light.xml",
-        "source": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/drawable/common_google_signin_btn_icon_light.xml"
+        "source": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/drawable/common_google_signin_btn_icon_light.xml"
     },
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable/common_plus_signin_btn_text_light.xml",
@@ -89,7 +89,7 @@
     },
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml",
-        "source": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/drawable/common_google_signin_btn_text_light.xml"
+        "source": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/drawable/common_google_signin_btn_text_light.xml"
     },
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
@@ -156,8 +156,12 @@
         "source": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/src/main/res/drawable/ic_filter_center_focus_black_24px.xml"
     },
     {
+        "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable/popup.xml",
+        "source": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/src/main/res/drawable/popup.xml"
+    },
+    {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
-        "source": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/drawable/common_google_signin_btn_icon_dark.xml"
+        "source": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/drawable/common_google_signin_btn_icon_dark.xml"
     },
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
@@ -173,7 +177,7 @@
     },
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark.xml",
-        "source": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/drawable/common_google_signin_btn_text_dark.xml"
+        "source": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/drawable/common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",

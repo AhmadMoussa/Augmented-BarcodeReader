@@ -8,24 +8,24 @@ package com.chauthai.swipereveallayout;
 
 public final class R {
     public static final class attr {
-        public static final int dragEdge = 0x7f010105;
-        public static final int flingVelocity = 0x7f010107;
-        public static final int minDistRequestDisallowParent = 0x7f010108;
-        public static final int mode = 0x7f010106;
+        public static final int dragEdge = 0x7f03007b;
+        public static final int flingVelocity = 0x7f030091;
+        public static final int minDistRequestDisallowParent = 0x7f0300fb;
+        public static final int mode = 0x7f0300fc;
     }
     public static final class id {
-        public static final int bottom = 0x7f0c0022;
-        public static final int left = 0x7f0c0028;
-        public static final int normal = 0x7f0c000c;
-        public static final int right = 0x7f0c0029;
-        public static final int same_level = 0x7f0c0044;
-        public static final int top = 0x7f0c002b;
+        public static final int bottom = 0x7f08001f;
+        public static final int left = 0x7f08005a;
+        public static final int normal = 0x7f08006f;
+        public static final int right = 0x7f08007c;
+        public static final int same_level = 0x7f08007d;
+        public static final int top = 0x7f0800b1;
     }
     public static final class styleable {
-        public static final int[] SwipeRevealLayout = { 0x7f010105, 0x7f010106, 0x7f010107, 0x7f010108 };
+        public static final int[] SwipeRevealLayout = { 0x7f03007b, 0x7f030091, 0x7f0300fb, 0x7f0300fc };
         public static final int SwipeRevealLayout_dragEdge = 0;
-        public static final int SwipeRevealLayout_flingVelocity = 2;
-        public static final int SwipeRevealLayout_minDistRequestDisallowParent = 3;
-        public static final int SwipeRevealLayout_mode = 1;
+        public static final int SwipeRevealLayout_flingVelocity = 1;
+        public static final int SwipeRevealLayout_minDistRequestDisallowParent = 2;
+        public static final int SwipeRevealLayout_mode = 3;
     }
 }

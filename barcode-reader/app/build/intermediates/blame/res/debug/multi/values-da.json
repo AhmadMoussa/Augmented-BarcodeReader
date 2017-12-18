@@ -1156,13 +1156,13 @@
                     "endOffset": 2125
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 329,
-                        "endColumn": 107,
-                        "endOffset": 432
+                        "startColumn": 0,
+                        "startOffset": 283,
+                        "endColumn": 103,
+                        "endOffset": 386
                     }
                 }
             },
@@ -1175,13 +1175,13 @@
                     "endOffset": 2317
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 437,
+                        "startColumn": 0,
+                        "startOffset": 387,
                         "endColumn": 191,
-                        "endOffset": 624
+                        "endOffset": 578
                     }
                 }
             },
@@ -1194,13 +1194,13 @@
                     "endOffset": 2446
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 629,
-                        "endColumn": 128,
-                        "endOffset": 753
+                        "startColumn": 0,
+                        "startOffset": 579,
+                        "endColumn": 124,
+                        "endOffset": 703
                     }
                 }
             },
@@ -1209,17 +1209,17 @@
                     "startLine": 24,
                     "startColumn": 4,
                     "startOffset": 2451,
-                    "endColumn": 127,
-                    "endOffset": 2574
+                    "endColumn": 110,
+                    "endOffset": 2557
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 758,
-                        "endColumn": 127,
-                        "endOffset": 881
+                        "startColumn": 0,
+                        "startOffset": 704,
+                        "endColumn": 106,
+                        "endOffset": 810
                     }
                 }
             },
@@ -1227,18 +1227,18 @@
                 "to": {
                     "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 2579,
-                    "endColumn": 212,
-                    "endOffset": 2787
+                    "startOffset": 2562,
+                    "endColumn": 201,
+                    "endOffset": 2759
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 886,
-                        "endColumn": 212,
-                        "endOffset": 1094
+                        "startColumn": 0,
+                        "startOffset": 811,
+                        "endColumn": 201,
+                        "endOffset": 1012
                     }
                 }
             },
@@ -1246,18 +1246,18 @@
                 "to": {
                     "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 2792,
-                    "endColumn": 212,
-                    "endOffset": 3000
+                    "startOffset": 2764,
+                    "endColumn": 126,
+                    "endOffset": 2886
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 1099,
-                        "endColumn": 212,
-                        "endOffset": 1307
+                        "startColumn": 0,
+                        "startOffset": 1013,
+                        "endColumn": 122,
+                        "endOffset": 1135
                     }
                 }
             },
@@ -1265,18 +1265,18 @@
                 "to": {
                     "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 3005,
-                    "endColumn": 126,
-                    "endOffset": 3127
+                    "startOffset": 2891,
+                    "endColumn": 133,
+                    "endOffset": 3020
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 1312,
-                        "endColumn": 126,
-                        "endOffset": 1434
+                        "startColumn": 0,
+                        "startOffset": 1136,
+                        "endColumn": 129,
+                        "endOffset": 1265
                     }
                 }
             },
@@ -1284,18 +1284,18 @@
                 "to": {
                     "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 3132,
-                    "endColumn": 133,
-                    "endOffset": 3261
+                    "startOffset": 3025,
+                    "endColumn": 185,
+                    "endOffset": 3206
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/810ec8f138d6d147e7bcb8933a51c2f69fbd5a8d/output/res/values-da/values.xml",
                     "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 1439,
-                        "endColumn": 133,
-                        "endOffset": 1568
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 285,
+                        "endColumn": 185,
+                        "endOffset": 470
                     }
                 }
             },
@@ -1303,18 +1303,18 @@
                 "to": {
                     "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 3266,
-                    "endColumn": 245,
-                    "endOffset": 3507
+                    "startOffset": 3211,
+                    "endColumn": 214,
+                    "endOffset": 3421
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/da3f6765e11777cd6f6d7a1279ce8da2f416c5f5/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 331,
-                        "endColumn": 245,
-                        "endOffset": 572
+                        "startLine": 11,
+                        "startColumn": 0,
+                        "startOffset": 1266,
+                        "endColumn": 214,
+                        "endOffset": 1480
                     }
                 }
             },
@@ -1322,18 +1322,18 @@
                 "to": {
                     "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 3512,
-                    "endColumn": 247,
-                    "endOffset": 3755
+                    "startOffset": 3426,
+                    "endColumn": 107,
+                    "endOffset": 3529
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1573,
-                        "endColumn": 247,
-                        "endOffset": 1816
+                        "startColumn": 0,
+                        "startOffset": 1481,
+                        "endColumn": 103,
+                        "endOffset": 1584
                     }
                 }
             },
@@ -1341,18 +1341,18 @@
                 "to": {
                     "startLine": 31,
                     "startColumn": 4,
-                    "startOffset": 3760,
-                    "endColumn": 124,
-                    "endOffset": 3880
+                    "startOffset": 3534,
+                    "endColumn": 192,
+                    "endOffset": 3722
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 1821,
-                        "endColumn": 124,
-                        "endOffset": 1941
+                        "startColumn": 0,
+                        "startOffset": 1585,
+                        "endColumn": 192,
+                        "endOffset": 1777
                     }
                 }
             },
@@ -1360,18 +1360,18 @@
                 "to": {
                     "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 3885,
-                    "endColumn": 107,
-                    "endOffset": 3988
+                    "startOffset": 3727,
+                    "endColumn": 128,
+                    "endOffset": 3851
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 1946,
-                        "endColumn": 107,
-                        "endOffset": 2049
+                        "startColumn": 0,
+                        "startOffset": 1778,
+                        "endColumn": 124,
+                        "endOffset": 1902
                     }
                 }
             },
@@ -1379,18 +1379,18 @@
                 "to": {
                     "startLine": 33,
                     "startColumn": 4,
-                    "startOffset": 3993,
-                    "endColumn": 192,
-                    "endOffset": 4181
+                    "startOffset": 3856,
+                    "endColumn": 203,
+                    "endOffset": 4055
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 2054,
-                        "endColumn": 192,
-                        "endOffset": 2242
+                        "startColumn": 0,
+                        "startOffset": 1903,
+                        "endColumn": 203,
+                        "endOffset": 2106
                     }
                 }
             },
@@ -1398,18 +1398,18 @@
                 "to": {
                     "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 4186,
-                    "endColumn": 128,
-                    "endOffset": 4310
+                    "startOffset": 4060,
+                    "endColumn": 207,
+                    "endOffset": 4263
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 2247,
-                        "endColumn": 128,
-                        "endOffset": 2371
+                        "startColumn": 0,
+                        "startOffset": 2107,
+                        "endColumn": 203,
+                        "endOffset": 2310
                     }
                 }
             },
@@ -1417,18 +1417,18 @@
                 "to": {
                     "startLine": 35,
                     "startColumn": 4,
-                    "startOffset": 4315,
-                    "endColumn": 203,
-                    "endOffset": 4514
+                    "startOffset": 4268,
+                    "endColumn": 95,
+                    "endOffset": 4359
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 17,
-                        "startColumn": 4,
-                        "startOffset": 2376,
-                        "endColumn": 203,
-                        "endOffset": 2575
+                        "startColumn": 0,
+                        "startOffset": 2311,
+                        "endColumn": 91,
+                        "endOffset": 2402
                     }
                 }
             },
@@ -1436,18 +1436,18 @@
                 "to": {
                     "startLine": 36,
                     "startColumn": 4,
-                    "startOffset": 4519,
-                    "endColumn": 132,
-                    "endOffset": 4647
+                    "startOffset": 4364,
+                    "endColumn": 91,
+                    "endOffset": 4451
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 2580,
-                        "endColumn": 132,
-                        "endOffset": 2708
+                        "startColumn": 0,
+                        "startOffset": 2403,
+                        "endColumn": 87,
+                        "endOffset": 2490
                     }
                 }
             },
@@ -1455,18 +1455,18 @@
                 "to": {
                     "startLine": 37,
                     "startColumn": 4,
-                    "startOffset": 4652,
-                    "endColumn": 207,
-                    "endOffset": 4855
+                    "startOffset": 4456,
+                    "endColumn": 106,
+                    "endOffset": 4558
                 },
                 "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
+                    "file": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/values-da/values.xml",
                     "position": {
                         "startLine": 19,
-                        "startColumn": 4,
-                        "startOffset": 2713,
-                        "endColumn": 207,
-                        "endOffset": 2916
+                        "startColumn": 0,
+                        "startOffset": 2491,
+                        "endColumn": 102,
+                        "endOffset": 2593
                     }
                 }
             },
@@ -1474,66 +1474,9 @@
                 "to": {
                     "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 4860,
-                    "endColumn": 95,
-                    "endOffset": 4951
-                },
-                "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
-                    "position": {
-                        "startLine": 20,
-                        "startColumn": 4,
-                        "startOffset": 2921,
-                        "endColumn": 95,
-                        "endOffset": 3012
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 39,
-                    "startColumn": 4,
-                    "startOffset": 4956,
-                    "endColumn": 91,
-                    "endOffset": 5043
-                },
-                "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
-                    "position": {
-                        "startLine": 21,
-                        "startColumn": 4,
-                        "startOffset": 3017,
-                        "endColumn": 91,
-                        "endOffset": 3104
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 40,
-                    "startColumn": 4,
-                    "startOffset": 5048,
-                    "endColumn": 106,
-                    "endOffset": 5150
-                },
-                "from": {
-                    "file": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/values-da/values.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 3109,
-                        "endColumn": 106,
-                        "endOffset": 3211
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 41,
-                    "startColumn": 4,
-                    "startOffset": 5155,
+                    "startOffset": 4563,
                     "endColumn": 78,
-                    "endOffset": 5229
+                    "endOffset": 4637
                 },
                 "from": {
                     "file": "/Users/christinebaertl/.android/build-cache/773a980274f28cf6d553dbb6c393d825cb8544cf/output/res/values-da/values-da.xml",
@@ -1548,11 +1491,11 @@
             },
             {
                 "to": {
-                    "startLine": 42,
+                    "startLine": 39,
                     "startColumn": 4,
-                    "startOffset": 5234,
+                    "startOffset": 4642,
                     "endColumn": 100,
-                    "endOffset": 5330
+                    "endOffset": 4738
                 },
                 "from": {
                     "file": "/Users/christinebaertl/.android/build-cache/773a980274f28cf6d553dbb6c393d825cb8544cf/output/res/values-da/values-da.xml",

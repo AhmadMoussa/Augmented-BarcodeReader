@@ -34,8 +34,7 @@
                 android:layout_alignRight="@+id/fragment_container"
                 android:layout_marginTop="60dp"
                 android:background="@drawable/search_bar"
-                android:elevation="5dp"
-                android:ems="5"
+                android:elevation="1dp"
                 >
 
                 <com.google.android.gms.samples.vision.barcodereader.DelayAutoCompleteTextView
@@ -46,7 +45,6 @@
                     android:imeOptions="flagNoExtractUi|actionSearch"
                     android:inputType="textCapSentences"
                     android:paddingRight="@dimen/padding_auto_complete"
-
                     />
 
                 <ProgressBar
@@ -72,7 +70,7 @@
                 android:background="@drawable/rounded_corners"
                 android:text="@string/add"
                 android:textColor="@color/text"
-                android:elevation="5dp"
+                android:elevation="10dp"
                 android:ems="5"
                 />
 
@@ -82,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerHorizontal="true"
-                android:text="@string/barcode_header"
+                android:text="Tap the search bar to loop up items, or scan a barcode to add items to your list."
                 android:textAlignment="center"
                 android:textColor="@color/text" />
 
@@ -97,19 +95,8 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/text" />
 
-            <TextView
-                android:id="@+id/bill_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/autoCompleteTextView"
-                android:layout_alignLeft="@+id/read_barcode"
-                android:layout_alignRight="@+id/read_barcode"
-                android:text="Bill:"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#000000"
-                android:elevation="5dp"
-                android:ems="5"
-                />
+
+
 
             <TextView
                 android:id="@+id/bill_container"
@@ -147,11 +134,10 @@
                 android:layout_toRightOf="@+id/use_flash"
                 android:elevation="10dp"
                 android:src="@drawable/flash_off"
-
                 />
 
             <Button
-                android:id="@+id/Add"
+                android:id="@+id/in_store_map"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -159,8 +145,10 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="8dp"
                 android:background="@drawable/rounded_corners"
-                android:text="@string/store_map"
-                android:textColor="@color/text" />
+                android:text="Store Map"
+                android:textColor="@color/text"
+                android:elevation="10dp"
+                />
 
             <Button
                 android:id="@+id/read_barcode"
@@ -168,12 +156,13 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginBottom="70dp"
+                android:layout_marginBottom="120dp"
                 android:layout_marginRight="8dp"
                 android:background="@drawable/rounded_corners"
                 android:text="@string/read_barcode"
                 android:textColor="@color/text"
-                android:transitionName="@string/blue_name" />
+                android:transitionName="@string/blue_name"
+                />
 
             <Button
                 android:id="@+id/store_map"
@@ -181,10 +170,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="65dp"
                 android:layout_marginRight="8dp"
                 android:background="@drawable/rounded_corners"
-                android:text="@string/store_map"
+                android:text="To Store"
                 android:textColor="@color/text" />
 
             <Switch
@@ -210,14 +199,16 @@
                 android:layout_marginTop="40dp"
                 android:checked="false" />
 
+
+
             <RelativeLayout
                 android:id="@+id/fragment_container"
-                android:layout_width="235dp"
+                android:layout_width="234dp"
                 android:layout_height="500dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginRight="100dp"
-                android:layout_marginTop="115dp"
+                android:layout_marginTop="110dp"
                 android:background="@drawable/search_bar"
 
                 android:elevation="3dp"

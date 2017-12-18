@@ -26,27 +26,33 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.CommonStatusCodes;
@@ -58,6 +64,7 @@ import com.google.android.gms.vision.MultiProcessor;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -78,6 +85,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
     public static final String AutoFocus = "AutoFocus";
     public static final String UseFlash = "UseFlash";
     public static final String BarcodeObject = "Barcode";
+    public static final String CodeObject = "Code";
 
     private CameraSource mCameraSource;
     private CameraSourcePreview mPreview;
@@ -360,13 +368,17 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         float y = (rawY - location[1]) / mGraphicOverlay.getHeightScaleFactor();
 
         // Find the barcode whose center is closest to the tapped point.
-       Barcode best = null;
+        Barcode best = null;
+        Code bestCode = null;
         float bestDistance = Float.MAX_VALUE;
         for (BarcodeGraphic graphic : mGraphicOverlay.getGraphics()) {
             Barcode barcode = graphic.getBarcode();
             if (barcode.getBoundingBox().contains((int) x, (int) y)) {
                 // Exact hit, no need to keep looking.
                 best = barcode;
+                if (graphic.getCode() != null) {
+                    bestCode = new Code(graphic.getCode());
+                }
                 break;
             }
             float dx = x - barcode.getBoundingBox().centerX();
@@ -379,21 +391,102 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
         }
 
         if (best != null) {
-            ListFrag fragment = new ListFrag();
-
+//            ListFrag fragment = new ListFrag();
 //            RelativeLayout container = (RelativeLayout) findViewById(R.id.fragment_container);
 //            container.setBackgroundDrawable(R.drawable.rounded_corners);
 
-            Intent data = new Intent();
-            data.putExtra(BarcodeObject, best);
-            setResult(CommonStatusCodes.SUCCESS, data);
+//            Intent data = new Intent();
+//            data.putExtra(BarcodeObject, best);
+//
+//            String jsonInString = "";
+//            ObjectMapper mapper = new ObjectMapper();
+//            try {
+//                //Object to JSON in String
+//                jsonInString = mapper.writeValueAsString(bestCode);
+//            }catch(IOException e){
+//                System.out.println("IOEXCEPTION converting from object to json");
+//            }
+//
+//            data.putExtra(CodeObject, bestCode);
+//
+//            System.out.println("JSONITEM = \n" + jsonInString);
+//            setResult(CommonStatusCodes.SUCCESS, data);
 //            killActivity();
+
+            if(bestCode != null) {
+                showPopup(findViewById(R.id.graphicOverlay), x, y, best, bestCode);
+            }
             return true;
         }
+
         return false;
     }
 
-    private void killActivity() {
+    public void showPopup(View anchorView, float offsetX, float offsetY, Barcode barcode, Code code) {
+
+        View popupView = getLayoutInflater().inflate(R.layout.popup_frag, null);
+
+        PopupWindow popupWindow = new PopupWindow(popupView,
+                RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+
+        // Example: If you have a TextView inside `popup_layout.xml`
+        ((TextView) popupView.findViewById(R.id.item_name)).setText(code.getTitle());
+        ((TextView) popupView.findViewById(R.id.item_description)).setText(code.getDescription());
+
+        final Barcode best = barcode;
+        final Code bestCode = code;
+
+        //get the button and set the onclick listener that will add the item to the list
+        popupView.findViewById(R.id.add_button)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        endActivity(best, bestCode);
+                    }
+                });
+        // Initialize more widgets from `popup_layout.xml`
+
+        // If the PopupWindow should be focusable
+        popupWindow.setFocusable(true);
+
+        // If you need the PopupWindow to dismiss when when touched outside
+        popupWindow.setBackgroundDrawable(new ColorDrawable());
+
+        int location[] = new int[2];
+
+        // Get the View's(the one that was clicked in the Fragment) location
+        anchorView.getLocationOnScreen(location);
+
+        // Using location, the PopupWindow will be displayed right under anchorView
+        //popupWindow.showAtLocation(anchorView, Gravity.NO_GRAVITY,location[0], location[1] + anchorView.getHeight());
+
+        popupWindow.showAsDropDown(anchorView, (int) offsetX, (int) offsetY,Gravity.NO_GRAVITY);
+    }
+
+    //this is called once we press on the button inside the popup
+    private void endActivity(Barcode best, Code bestCode) {
+
+        //Creates a new Intent to load with our code object and send back to the main activity
+        Intent data = new Intent();
+        data.putExtra(BarcodeObject, best);
+
+        //JSON string that will hold our code object as a simple JSON String
+//        String jsonInString = "";
+//        ObjectMapper mapper = new ObjectMapper();
+//        try {
+//            //Object to JSON in String
+//            jsonInString = mapper.writeValueAsString(bestCode);
+//        } catch (IOException e) {
+//            System.out.println("IOEXCEPTION converting from object to json");
+//        }
+
+        //Actually we're just loading the intent with our code object
+        //and unwrap as serialisable which works just fine
+        data.putExtra(CodeObject, bestCode);
+
+        //DEBUG
+        // System.out.println("JSONITEM = \n" + jsonInString);
+        setResult(CommonStatusCodes.SUCCESS, data);
         finish();
     }
 

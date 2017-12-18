@@ -1,6 +1,7 @@
 package com.google.android.gms.samples.vision.barcodereader;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +49,10 @@ public class ListFragAdapter extends BaseSwipeAdapter {
         Log.d("INDEX", "not removed");
     }
 
+    public ArrayList<Code> getCodes(){
+        return this.codes;
+    }
+
     @Override
     public int getSwipeLayoutResourceId(int position) {
         return R.id.swipe;
@@ -63,7 +68,7 @@ public class ListFragAdapter extends BaseSwipeAdapter {
         swipeLayout.setOnDoubleClickListener(new SwipeLayout.DoubleClickListener() {
             @Override
             public void onDoubleClick(SwipeLayout layout, boolean surface) {
-                Toast.makeText(mContext, "Swipe left to delete", Toast.LENGTH_SHORT).show();
+                v.setBackgroundColor(Color.GREEN);
             }
         });
 
@@ -84,6 +89,49 @@ public class ListFragAdapter extends BaseSwipeAdapter {
         return v;
     }
 
+
+    /*
+        Let me take you through the application
+        The main activity, is composed of several functional UI elements.
+        At the top of the screen, there is a search bar.
+        Which when in focus, and typed into, triggers a background task
+        that searches the database for items and suggests options for you to select.
+
+        We can then tap on one the suggested items to add it to our shopping list
+        and see more details about the selected item.
+
+        For now we'll go with the first item.
+
+        It'll also update the total price to the left side of the screen.
+
+
+
+
+        One of the main features of our application is a barcode detector.
+        This detector, once it detects a barcode, creates a bounding box around said barcode.
+
+        This also triggers a background task that fetches information about the item on display.
+
+        We can then tap on the box to get a popup display more information, and then decide wether
+        we want to add it or not.
+
+
+
+
+        So now you can check wether the item's price tag is actually accurate or not.
+
+
+
+        The user can also see where the items in his shopping list are currently located
+        in the store.
+
+        A store map is displayed, and markers are added on the location of the items.
+        Those markers can be tapped to see additional information.
+
+        The map is dynamically updated upon addition and removal of other items.
+
+    */
+
     @Override
     public void fillValues(int position, View convertView) {
         if (convertView == null) {
@@ -94,10 +142,12 @@ public class ListFragAdapter extends BaseSwipeAdapter {
         }
 
         TextView name = (TextView) convertView.findViewById(R.id.list_entry_title);
-        TextView barcode = (TextView) convertView.findViewById(R.id.list_entry_barcode);
+        TextView price = (TextView) convertView.findViewById(R.id.list_entry_price);
+        TextView description = (TextView) convertView.findViewById(R.id.list_entry_description);
 
         name.setText(codes.get(position).getTitle());
-        barcode.setText(codes.get(position).getBarcode());
+        price.setText(codes.get(position).getPrice() + "");
+        description.setText(codes.get(position).getDescription());
     }
 
     @Override

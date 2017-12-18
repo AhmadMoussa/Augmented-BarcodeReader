@@ -42,5 +42,7 @@ class BarcodeTrackerFactory implements MultiProcessor.Factory<Barcode> {
         return new BarcodeGraphicTracker(mGraphicOverlay, graphic, mContext);
     }
 
+
+
 }
 

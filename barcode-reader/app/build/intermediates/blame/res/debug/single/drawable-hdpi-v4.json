@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
-        "source": "/Users/christinebaertl/.android/build-cache/773a980274f28cf6d553dbb6c393d825cb8544cf/output/res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/button_states.xml",
         "source": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/src/main/res/drawable-hdpi/button_states.xml"
+    },
+    {
+        "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "/Users/christinebaertl/.android/build-cache/773a980274f28cf6d553dbb6c393d825cb8544cf/output/res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/common_google_signin_btn_text_dark_normal.9.png",
@@ -261,7 +261,7 @@
     },
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/common_full_open_on_phone.png",
-        "source": "/Users/christinebaertl/.android/build-cache/8105b46b4bc7bad154028ce5b8347cce794e5afa/output/res/drawable-hdpi-v4/common_full_open_on_phone.png"
+        "source": "/Users/christinebaertl/.android/build-cache/9169ef03aff55cd8d439efdf66bf23a357d76bb1/output/res/drawable-hdpi-v4/common_full_open_on_phone.png"
     },
     {
         "merged": "/Users/christinebaertl/Downloads/android-vision-master 3/visionSamples/barcode-reader/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/rounded_corners.xml",

@@ -29,6 +29,11 @@ public class DelayAutoCompleteTextView extends AppCompatAutoCompleteTextView {
         }
     };
 
+    protected void clearAdapter(){
+        ((AutoCompleteAdapter)getAdapter()).clearAdapter();
+        ((AutoCompleteAdapter)getAdapter()).notifyDataSetChanged();
+    }
+
     public DelayAutoCompleteTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }

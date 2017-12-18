@@ -16,7 +16,6 @@
 
 package com.google.android.gms.samples.vision.barcodereader;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.hardware.Camera;
@@ -26,7 +25,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.transition.Slide;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,11 +43,6 @@ import android.widget.Toast;
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.barcode.Barcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static com.google.android.gms.samples.vision.barcodereader.CameraView.getCameraInstance;
-
 /**
  * Main activity demonstrating how to pass extra parameters to an activity that
  * reads barcodes.
@@ -63,6 +56,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private TextView barcodeValue;
 
     private static final int RC_BARCODE_CAPTURE = 9001;
+    private static final int RC_STORE_MAP = 9002;
     private static final String TAG = "BarcodeMain";
 
     private ListView mDrawerList;
@@ -79,7 +73,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private CameraView mPreview;
     private FrameLayout preview;
 
-
+    private DelayAutoCompleteTextView DACTV;
+    private AutoCompleteAdapter autoCompleteAdapter;
     int THRESHOLD = 3;
 
     @Override
@@ -109,6 +104,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         Button button = (Button) findViewById(R.id.read_barcode);
         button.setOnClickListener(this);
+
+
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -126,10 +123,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         findViewById(R.id.add_item).setOnClickListener(this);
         findViewById(R.id.store_map).setOnClickListener(this);
+        findViewById(R.id.in_store_map).setOnClickListener(this);
         mDrawerList = (ListView) findViewById(R.id.navList);
 
         ListFrag fragment = new ListFrag();
-
 
         fragmentTransaction.add(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
@@ -175,7 +172,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         });
 
         setBackground();
-        setAdapter();
+
+        // set adapter and auto complete text view <-> order is important
+        autoCompleteAdapter = new AutoCompleteAdapter(this);
+        DACTV = setAdapter();
 
 //        CameraView camV = new CameraView(getApplicationContext());
 //        SurfaceView surface = (SurfaceView)findViewById(R.id.surfaceView);
@@ -189,24 +189,22 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 //        }else{
 //            Log.d("Yep","it does exist");
 //        }
-
     }
 
-    AutoCompleteAdapter autoCompleteAdapter = new AutoCompleteAdapter(this);
-
-    private void setAdapter() {
-        final DelayAutoCompleteTextView itemName = (DelayAutoCompleteTextView) findViewById(R.id.et_book_title);
-        itemName.setThreshold(THRESHOLD);
-        itemName.setAdapter(autoCompleteAdapter); // 'this' is Activity instance
-        itemName.setLoadingIndicator(
+    private DelayAutoCompleteTextView setAdapter() {
+        final DelayAutoCompleteTextView DACTV = (DelayAutoCompleteTextView) findViewById(R.id.et_book_title);
+        DACTV.setThreshold(THRESHOLD);
+        DACTV.setAdapter(autoCompleteAdapter); // 'this' is Activity instance
+        DACTV.setLoadingIndicator(
                 (android.widget.ProgressBar) findViewById(R.id.pb_loading_indicator));
-        itemName.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        DACTV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Code book = (Code) adapterView.getItemAtPosition(position);
-                itemName.setText(book.getTitle());
+                DACTV.setText(book.getTitle());
             }
         });
+        return DACTV;
     }
 
     private void setBackground() {
@@ -229,6 +227,27 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     protected void onStart() {
         super.onStart();
         setBackground();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle state) {
+        super.onSaveInstanceState(state);
+        ListFrag list = (ListFrag) fragmentManager.findFragmentById(R.id.fragment_container);
+        System.out.println("LIST STATE BEFORE TERMINATING" + list.getAdapter().getCodes());
+        state.putSerializable("codes", list.getAdapter().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+    }
+
+    @Override
+    protected void onDestroy(){
+        ListFrag list = (ListFrag) fragmentManager.findFragmentById(R.id.fragment_container);
+        System.out.println("LIST STATE BEFORE TERMINATING" + list.getAdapter().getCodes());
+        super.onDestroy();
     }
 
     private void addDrawerItems() {
@@ -314,7 +333,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.read_barcode) {
-
             // launch barcode activity.
             Intent intent = new Intent(this, BarcodeCaptureActivity.class);
             intent.putExtra(BarcodeCaptureActivity.AutoFocus, autoFocus.isChecked());
@@ -323,40 +341,68 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         }
 
         if (v.getId() == R.id.add_item) {
-            System.out.println(autoCompleteAdapter.getCount());
-            System.out.println(((AutoCompleteTextView) this.findViewById(R.id.et_book_title)).getText());
-            if (autoCompleteAdapter.getCount() == 0 ||
-                    ((AutoCompleteTextView) this.findViewById(R.id.et_book_title)).getText().equals("")) {
+
+            // Check if there is something in the adapter
+            System.out.println("This is the DACTV current text: \"" + DACTV.getText().toString() + "\"");
+            System.out.println("This is the DACTV adapter current count: " + DACTV.getAdapter().getCount());
+            System.out.println("DACTV adapter before = " + autoCompleteAdapter.toString());
+
+            if (DACTV.getAdapter().getCount() == 0 || DACTV.getText().toString() == "") {
                 Toast.makeText(this, "Please search for an item!",
                         Toast.LENGTH_LONG).show();
+
+                if (DACTV.getAdapter().getCount() == 0) {
+                    System.out.println("ADAPTER IS EMPTY");
+                } else if (DACTV.getText().toString() == "") {
+                    System.out.println("AUTOCOMPLETE TEXTVIEW IS EMPTY");
+                }
                 return;
             }
 
-            //Copy constrcutor to create a new code item from the first/selected item in adapter
+            //Copy constructor to create a new code item from the first/selected item in adapter
             Code code = new Code(autoCompleteAdapter.getItem(0));
-            Log.d("AUTO COMPLETE ADAPTER", autoCompleteAdapter.getCount() + "");
+            // add item
+            addItem(code);
+            System.out.println("This is the X value of the barcode"+code.getX()+"");
 
-            //Clear Adapter
-            autoCompleteAdapter.clearAdapter();
-            Log.d("AUTO COMPLETE ADAPTER ", autoCompleteAdapter.getCount() + "");
-
-            //Clear search bar
-            View bar = this.findViewById(R.id.et_book_title);
-            ((AutoCompleteTextView) bar).setText("");
-
-            // Get list fragment in view and add the newly created code to it
-            ListFrag list = (ListFrag) fragmentManager.findFragmentById(R.id.fragment_container);
-            list.addItems(code);
-
-            //update the prices
-            updatePrice(list);
+            // Check if there is something in the adapter
+            System.out.println("This is the DACTV text after addition: \"" + DACTV.getText().toString() + "\"");
+            System.out.println("This is the DACTV adapter count after addition: " + DACTV.getAdapter().getCount());
+            System.out.println("DACTV adapter before = " + autoCompleteAdapter.toString());
         }
 
         if (v.getId() == R.id.store_map) {
-//            // launch barcode activity.
-//            Intent intent = new Intent(this, ChooseStore.class);
-//            startActivity(intent);
+            // launch barcode activity.
+            Intent intent = new Intent(this, MapLocation.class);
+            startActivity(intent);
         }
+
+        if(v.getId() == R.id.in_store_map){
+            ListFrag list = (ListFrag) fragmentManager.findFragmentById(R.id.fragment_container);
+            System.out.println("LIST STATE BEFORE TERMINATING" + list.getAdapter().getCodes());
+            Intent intent = new Intent(this, StoreMap.class);
+            intent.putExtra("CodesArrayList",list.getAdapter().getCodes());
+            startActivityForResult(intent, RC_STORE_MAP);
+        }
+    }
+
+    public void addItem(Code code) {
+        //Clear Adapter
+        System.out.println("HERE WE'RE SUPPOSEDLY CLEARING THE ADAPTER" + DACTV.getAdapter().getCount());
+        autoCompleteAdapter.clearAdapter();
+        DACTV.clearAdapter();
+        System.out.println("HERE THE ADAPTER IS SUPPOSEDLY CLEARED" + DACTV.getAdapter().getCount());
+
+        //Clear search bar
+        View bar = this.findViewById(R.id.et_book_title);
+        ((AutoCompleteTextView) bar).setText("", false);
+
+        // Get list fragment in view and add the newly created code to it
+        ListFrag list = (ListFrag) fragmentManager.findFragmentById(R.id.fragment_container);
+        list.addItems(code);
+
+        //update the prices
+        updatePrice(list);
     }
 
     public void updatePrice(ListFrag list) {
@@ -389,23 +435,27 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        if (requestCode == RC_BARCODE_CAPTURE) {
-//            if (resultCode == CommonStatusCodes.SUCCESS) {
-//                if (data != null) {
-//                    Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
-//                    statusMessage.setText(R.string.barcode_success);
-//                    barcodeValue.setText(barcode.displayValue);
-//                    Log.d(TAG, "Barcode read: " + barcode.displayValue);
-//                } else {
-//                    statusMessage.setText(R.string.barcode_failure);
-//                    Log.d(TAG, "No barcode captured, intent data is null");
-//                }
-//            } else {
-//                statusMessage.setText(String.format(getString(R.string.barcode_error),
-//                        CommonStatusCodes.getStatusCodeString(resultCode)));
-//            }
-//        } else {
-//            super.onActivityResult(requestCode, resultCode, data);
-//        }
+        if (requestCode == RC_BARCODE_CAPTURE) {
+            if (resultCode == CommonStatusCodes.SUCCESS) {
+                if (data != null) {
+                    Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
+                    Code codeAsJson = new Code((Code) data.getSerializableExtra(BarcodeCaptureActivity.CodeObject));
+                    statusMessage.setText(R.string.barcode_success);
+                    //barcodeValue.setText(codeAsJson.getTitle());
+
+                    addItem(codeAsJson);
+                    System.out.println(codeAsJson);
+                    Log.d(TAG, "Barcode read: " + barcode.displayValue);
+                } else {
+                    statusMessage.setText(R.string.barcode_failure);
+                    Log.d(TAG, "No barcode captured, intent data is null");
+                }
+            } else {
+                statusMessage.setText(String.format(getString(R.string.barcode_error),
+                        CommonStatusCodes.getStatusCodeString(resultCode)));
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }

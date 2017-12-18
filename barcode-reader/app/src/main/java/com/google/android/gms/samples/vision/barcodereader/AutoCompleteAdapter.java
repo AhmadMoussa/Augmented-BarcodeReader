@@ -40,6 +40,7 @@ public class AutoCompleteAdapter extends BaseAdapter implements Filterable {
 
     public void clearAdapter() {
         resultList.clear();
+        notifyDataSetChanged();
         Log.d("Result list", resultList.size() + "");
     }
 
@@ -67,13 +68,16 @@ public class AutoCompleteAdapter extends BaseAdapter implements Filterable {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) mContext
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.simple_dropdown_item_2line, parent, false);
         }
+
         ((TextView) convertView.findViewById(R.id.text1)).setText(getItem(position).getTitle());
         ((TextView) convertView.findViewById(R.id.text2)).setText(getItem(position).getPrice() + "");
+
         return convertView;
     }
 
