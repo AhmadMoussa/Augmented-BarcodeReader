@@ -1,19 +1,3 @@
-/*
- * Copyright (C) The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.google.android.gms.samples.vision.barcodereader;
 
 import android.content.Intent;
@@ -105,22 +89,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         Button button = (Button) findViewById(R.id.read_barcode);
         button.setOnClickListener(this);
 
-
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, BarcodeCaptureActivity.class);
-//                intent.putExtra(BarcodeCaptureActivity.AutoFocus, autoFocus.isChecked());
-//                intent.putExtra(BarcodeCaptureActivity.UseFlash, useFlash.isChecked());
-//
-//                View sharedView = button;
-//                String transitionName = getString(R.string.blue_name);
-//
-//                ActivityOptions transitionActivityOptions = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, sharedView, transitionName);
-//                startActivityForResult(intent, RC_BARCODE_CAPTURE, transitionActivityOptions.toBundle());
-//            }
-//        });
-
         findViewById(R.id.add_item).setOnClickListener(this);
         findViewById(R.id.store_map).setOnClickListener(this);
         findViewById(R.id.in_store_map).setOnClickListener(this);
@@ -130,14 +98,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         fragmentTransaction.add(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
-//
-//        //Creating the instance of ArrayAdapter containing list of fruit names
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_item);
-//        //Getting the instance of AutoCompleteTextView
-//        AutoCompleteTextView actv = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
-//        actv.setThreshold(1);//will start working from first character
-//        actv.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
-//        actv.setTextColor(Color.RED);
 
         Switch focusSwitch = (Switch) findViewById(R.id.auto_focus);
         focusSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -176,19 +136,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         // set adapter and auto complete text view <-> order is important
         autoCompleteAdapter = new AutoCompleteAdapter(this);
         DACTV = setAdapter();
-
-//        CameraView camV = new CameraView(getApplicationContext());
-//        SurfaceView surface = (SurfaceView)findViewById(R.id.surfaceView);
-//
-//        SurfaceHolder surfaceHolder = surface.getHolder();
-//        surfaceHolder.addCallback(camV);
-//        surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_NORMAL);
-//        camV.surfaceCreated(surfaceHolder);
-//        if(surface.getHolder() == null){
-//           Log.d("NOPE","it doesn't exist");
-//        }else{
-//            Log.d("Yep","it does exist");
-//        }
     }
 
     private DelayAutoCompleteTextView setAdapter() {
@@ -220,13 +167,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-        setBackground();
+        //setBackground();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        setBackground();
+        //setBackground();
     }
 
     @Override
@@ -244,7 +191,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onDestroy(){
+    protected void onDestroy() {
         ListFrag list = (ListFrag) fragmentManager.findFragmentById(R.id.fragment_container);
         System.out.println("LIST STATE BEFORE TERMINATING" + list.getAdapter().getCodes());
         super.onDestroy();
@@ -363,7 +310,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             Code code = new Code(autoCompleteAdapter.getItem(0));
             // add item
             addItem(code);
-            System.out.println("This is the X value of the barcode"+code.getX()+"");
+            System.out.println("This is the X value of the barcode" + code.getX() + "");
 
             // Check if there is something in the adapter
             System.out.println("This is the DACTV text after addition: \"" + DACTV.getText().toString() + "\"");
@@ -377,11 +324,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             startActivity(intent);
         }
 
-        if(v.getId() == R.id.in_store_map){
+        if (v.getId() == R.id.in_store_map) {
             ListFrag list = (ListFrag) fragmentManager.findFragmentById(R.id.fragment_container);
             System.out.println("LIST STATE BEFORE TERMINATING" + list.getAdapter().getCodes());
             Intent intent = new Intent(this, StoreMap.class);
-            intent.putExtra("CodesArrayList",list.getAdapter().getCodes());
+            intent.putExtra("CodesArrayList", list.getAdapter().getCodes());
             startActivityForResult(intent, RC_STORE_MAP);
         }
     }
