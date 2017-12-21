@@ -45,7 +45,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by christinebaertl on 16.12.17.
+ * Created by Ahmad Moussa on 16.12.17.
  */
 
 public class MapLocation extends FragmentActivity
