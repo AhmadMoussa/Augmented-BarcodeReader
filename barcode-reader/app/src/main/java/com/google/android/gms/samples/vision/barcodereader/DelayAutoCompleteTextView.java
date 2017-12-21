@@ -11,7 +11,7 @@ import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 
 /**
- * Created by christinebaertl on 05.12.17.
+ * Created by Ahmad Moussa on 05.12.17.
  */
 
 public class DelayAutoCompleteTextView extends AppCompatAutoCompleteTextView {
