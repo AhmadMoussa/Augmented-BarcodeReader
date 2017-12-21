@@ -1,7 +1,7 @@
 package com.google.android.gms.samples.vision.barcodereader;
 
 /**
- * Created by christinebaertl on 17.12.17.
+ * Created by Ahmad Moussa on 17.12.17.
  */
 
 
