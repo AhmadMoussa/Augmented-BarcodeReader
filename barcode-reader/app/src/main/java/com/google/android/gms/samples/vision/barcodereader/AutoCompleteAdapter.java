@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by christinebaertl on 05.12.17.
+ * Created by Ahmad Moussa on 05.12.17.
  */
 
 public class AutoCompleteAdapter extends BaseAdapter implements Filterable {
