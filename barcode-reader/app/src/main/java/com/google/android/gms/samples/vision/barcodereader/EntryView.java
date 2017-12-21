@@ -1,3 +1,13 @@
+
+/*
+*   DISREGARD
+*   THIS
+*   FILE
+*   IT
+*   ISN'T
+*   USED
+*/
+
 package com.google.android.gms.samples.vision.barcodereader;
 
 import android.content.Intent;
@@ -7,7 +17,7 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by christinebaertl on 16.12.17.
+ * Created by Ahmad Moussa on 16.12.17.
  */
 
 public class EntryView extends ActionBarActivity implements View.OnClickListener{
